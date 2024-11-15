@@ -12,3 +12,5 @@ To run this application, the application should have connections to SQL Server a
 To run this web application, set Schema-Converters as the startup project. The application should run on url: https://localhost:7185/.
 
 We have also placed a sample SQL schema and data creation script in this repository (SQL\SQLScript.sql).
+
+Note: Please clear MongoDB database if re-running tranformation for new process to complete.
