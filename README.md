@@ -4,7 +4,7 @@ The solution has been created with ASP.NET web application template, and is base
 
 The purpose for this application is to transfer schema and data from a SQL based RDBMS to a document based NoSQL database. For our demonstration we have used SQL Server 2022 Express Edition as source and MongoDB as target database.
 
-*SQL Server 2022 - https://www.microsoft.com/en-in/sql-server/sql-server-downloads*
+*SQL Server 2022 - https://www.microsoft.com/en-in/sql-server/sql-server-downloads* <br />
 *MongoDB - https://www.mongodb.com/try/download/community*
 
 To run this application, the application should have connections to SQL Server and MongoDB.
