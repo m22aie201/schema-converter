@@ -1,0 +1,88 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+
+<script>
+    // Function to show loading overlay
+    function showLoading() {
+        document.getElementById('loadingOverlay').style.display = 'flex';
+    }
+</script>
+
+<div class="text-center">
+    <h1 style="font-family: 'Courier', sans-serif;">This is a database schema conversion tool. Please proceed to convert SQL based schema to a document based NoSQL schema.</h1>
+</div>
+
+<div>
+    <p><br /></p>
+</div>
+
+<div class="image-container">
+    <img src="images\database.png" alt="Database System Illustration">
+</div>
+
+<div class="loading-overlay" id="loadingOverlay">
+    <img style="max-width: 20%;border-radius:10px;" src="images\process.png" alt="Database System Illustration">
+    <h5>Transforming...</h5>
+</div>
+
+<div>
+    <p><br /></p>
+</div>
+
+<div style="font-family: 'Roboto', sans-serif;">
+    <p>Relational databases have long been the standard for IT applications, but the demand for handling large, unnormalized data has led to a shift toward NoSQL databases. Transforming relational schemas to NoSQL is challenging due to the lack of a unified NoSQL standard. To address this, structured transformation rules can convert relational schemas to document-based, column-based, and graph-based NoSQL models, applied based on data relationships. As a validation, these rules can be tested on NoSQL systems like MongoDB, Cassandra, and Neo4j to confirm accuracy and completeness.</p>
+</div>
+
+<div>
+    <p><br /></p>
+</div>
+
+<div class="table-container">
+    <table>
+        <thead>
+            <tr>
+                <th>Rule</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>
+                    <h5>Document-Based NoSQL</h5>
+                    <h6>One-to-One Association Relationship Transformation, One-to-Many Association Relationship Transformation and Many-to-Many Association Relationship</h6>
+                    <p>This rule provides two options based on how frequently information from two entities is accessed together.</p>
+                    <p>Option 1: If data from both entities is often queried together, create a single collection for one entity, embedding the other entity as a nested collection within it.</p>
+                    <p>Option 2: If data from the entities is accessed independently, create separate collections for each entity. In this case, store the ID of one entity as a reference within the other collection to establish a link between them.</p>
+                </td>
+                <td>
+                    <a class="btn btn-primary" style="position:center;" href="@Url.Action("SchemaTransformOneToOne","Home")" onclick="showLoading();" id="loadingLink">
+                        Transform (One:One)
+                    </a>
+                    <div>
+                        <p><br /></p>
+                    </div>
+                    <a class="btn btn-primary" style="position:center;" href="@Url.Action("SchemaTransform","Home")">
+                        Transform (One:Many / Many:Many)
+                    </a>
+                </td>
+            </tr>
+            <tr>
+                <td>
+                    <h5>Document-Based NoSQL</h5>
+                    <h6>Specialization in Inheritance Relationship</h6>
+                    <p>For each entity in the relational database, create an individual document. Use a referencing structure where the ID from the superclass collection is included as an ID within the subclass collection to establish relationships between them.</p>
+                </td>
+                <td><a class="btn btn-primary" href="@Url.Action("InheritenceMapping","Home")">Transform</a></td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+<div>
+    <p><br /></p>
+</div>
+
+<div class="text-center">
+    <p><a href="https://www.mdpi.com/2306-5729/4/4/148">Reference paper</a></p>
+</div>
